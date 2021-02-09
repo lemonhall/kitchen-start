@@ -18,5 +18,8 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^11.2.2"
+  },
+  "dependencies": {
+    "request": "^2.88.2"
   }
 }
