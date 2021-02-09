@@ -1,0 +1,27 @@
+.box{
+	display : flex;
+	width   : 1200px;
+}
+.monitor{
+	width : 640px;
+}
+.blank_div{
+	width : 20px;
+}
+.actions{
+	width : 500px; 
+}
+button{
+	width: 250px;/*设置按钮宽度*/
+	height: 95px;/*设置按钮高度*/
+	color:white;/*字体颜色*/
+	background-color:cornflowerblue;/*按钮背景颜色*/
+	border-radius: 5px;/*让按钮变得圆滑一点*/
+	border-width: 3;/*消去按钮丑的边框*/
+	margin: 2;/*margin0*/
+	outline: none;/*取消轮廓*/
+	font-size: 35px;/*设置字体大小*/
+	font-weight: lighter;/*设置字体粗细*/
+	text-align: center;/*字体居中*/
+	cursor: pointer;/*设置鼠标箭头手势*/
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <link type="text/css" rel="styleSheet"  href="./style.css" />
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <div class='box'>
+	<div class='monitor'>
+    		<img src='http://192.168.137.172:8080/?action=stream'>
+	</div>
+	<div class='blank_div'></div>
+	<div class='actions'>
+		<button>拍照</button>
+		<button>取消</button>
+	</div>
+    	<!-- You can also require other files to run in this process -->
+    	<script src="./renderer.js"></script>
+    </div>
+  </body>
+</html>
