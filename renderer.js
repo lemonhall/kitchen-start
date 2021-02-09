@@ -9,15 +9,34 @@ const electron = require('electron');
 const path = require('path');
 const request = require('request');
 const fs = require('fs');
+const sharp = require("sharp");
+const http = require('http');
 
 var save = document.getElementById('save');
 var counter_text = document.getElementById('counter');
 
+var transformer = sharp().rotate(180).toBuffer(function(err, data, info) {
+	    // data contains the raw pixel data after applying the recomb
+	//     // With this example input, a sepia filter has been applied
+	//       
+	});
+
 //实际负责下载的函数
 function downloadFile(file_url , targetPath){
-	 var req = request({method: 'GET',uri: file_url});
-	 var out = fs.createWriteStream(targetPath);
-	 req.pipe(out);
+		http.get(file_url, function(downloadStream) {
+			  var writeStream = fs.createWriteStream('./output.jpg');
+			  downloadStream.pipe(transformer).pipe(writeStream);
+
+			  downloadStream.on('end', () => {
+				      console.log('downloadStream', 'END');
+				    });
+			  writeStream.on('error', (err) => {
+				      console.log('writeStream', err);
+				    });
+			  downloadStream.on('error', (err) => {
+				      console.log('downloadStream', err);
+				    });
+		});
 }
 
 // Synchronous read
